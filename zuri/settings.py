@@ -26,7 +26,7 @@ SECRET_KEY = 'j-orel(a20-fursk154sjo1@xsm!$w#x@nhe@sttan7n8)6#7u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zuritakehome.herokuapp.com']
 
 
 # Application definition
