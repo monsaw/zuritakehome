@@ -1,0 +1,36 @@
+.navbar-brand{
+  color: red;
+  display: inline-block;
+
+}
+
+.align-right{
+  position: absolute;
+  right: 40px;
+}
+
+.side{
+  display: inline-block;
+  margin-right: 40px;
+  margin-top: 20px;
+  color: red;
+}
+
+.container{
+  margin: 4%;
+}
+.link{
+  text-decoration: none;
+
+}
+
+.about{
+  color:red;
+  text-align: center;
+}
+
+.delete{
+  position: absolute;
+  right: 40px;
+  margin-right: 500px;
+}

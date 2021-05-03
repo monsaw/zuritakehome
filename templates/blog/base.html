@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Blog</title>
+    <link rel="stylesheet" href="{% static 'master.css' %}">
+  </head>
+  <body>
+
+
+      <div class="heads">
+        <header>
+          <h1 class='navbar-brand'><a class = "link" href="{% url 'blog:index' %}">Django Blog</a></h1>
+          <span class="align-right">
+            <ul>
+              {% if user.is_authenticated %}
+
+              <li class="side"><a href="{% url 'blog:post_create' %}">Add Post</a></li>
+              <li class="side"><a href="{% url 'blog:password_change' %}">Change Password</a></li>
+              <li class="side"><a href="{% url 'logout' %}">Logout</a></li>
+
+              {% else %}
+              <li class="side"><a href="{% url 'blog:register' %}">Register</a></li>
+              <li class="side"><a href="{% url 'login' %}">Login</a></li>
+
+              {% endif %}
+
+            </ul>
+
+          </span>
+          <hr>
+        </header>
+      </div>
+
+      {% block body_block %}
+
+      {% endblock %}
+  </body>
+</html>

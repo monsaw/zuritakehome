@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% block body_block %}
+
+<div class="container">
+
+  <h2>{{posts.title}}</h2>
+  <h4>{{posts.body}}</h4>
+  <a class="delete" href="{% url 'blog:post_delete' pk=posts.pk %}">Delete Post</a>
+
+  <button type="button" name="button"><a href="{% url 'blog:post_comment' pk=posts.pk %}">Add Comment</a></button>
+
+{% for comment in posts.comments.all %}
+<h5>Commented By : {{comment.author}}</h5>
+<h5>Comment : {{comment.body|safe|linebreaksbr}}</h5>
+<h5>Date : {{comment.date}}</h5>
+<br>
+{% empty %}
+<h5>No comment for this post!</h5>
+{% endfor %}
+
+</div>
+
+
+
+{% endblock %}

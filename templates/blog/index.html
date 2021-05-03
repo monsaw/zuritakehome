@@ -1,0 +1,14 @@
+
+{% extends 'blog/base.html' %}
+{% block body_block %}
+
+<div class="container">
+  {% for list in lists %}
+  <h2><a href="{% url 'blog:post_detail' pk=list.pk %}">{{list.title}}</a></h2>
+  <h4>{{list.body|safe|slice:"40"}}</h4>
+  {% endfor %}
+</div>
+
+
+
+{% endblock %}
